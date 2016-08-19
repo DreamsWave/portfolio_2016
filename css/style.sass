@@ -1,0 +1,603 @@
+@mixin bg-hexToRgba($color, $opacity)
+  background: $color
+  background: darken(rgba($color, $opacity), 30%)
+
+$accent-color: #83D5FB
+$accent-bg-color: #EFEFEF
+
+$font-color: #3c4451
+
+$side-line-bg-color: #fff
+$side-line-size: 20px
+$side-line-z: 50
+
+$sidebar-z: 53
+
+$overlay-z: 52
+
+$header-bg-color: #fff
+$header-z: 51
+
+$box-color: #fff
+
+
+html, body
+  width: 100%
+  height: 100%
+
+body
+  color: $font-color
+  font-family: 'Roboto Condensed', sans-serif
+
+button
+  &:focus, &:active
+    outline: none!important
+
+.side-line
+  position: fixed
+  z-index: $side-line-z
+  background-color: $side-line-bg-color
+
+  &--top, &--bottom
+    height: $side-line-size
+    left: 0
+    right: 0
+  &--left, &--right
+    width: $side-line-size
+    top: 0
+    bottom: 0
+
+  &--top
+    top: 0
+  &--right
+    right: 0
+  &--bottom
+    bottom: 0
+  &--left
+    left: 0
+
+
+.wrapper
+  padding: $side-line-size
+  width: 100%
+  height: 100%
+
+.btn
+  margin: 0
+  padding: 0
+  height: 50px
+  line-height: 1
+  cursor: pointer
+  text-align: center
+  background: transparent
+  border: 1px solid $accent-bg-color
+  -webkit-transition: all 200ms ease-out
+  -moz-transition: all 200ms ease-out
+  transition: all 200ms ease-out
+  &--small
+    height: 40px
+
+
+.sidebar, .mobile-nav
+  position: fixed
+  top: 0
+  right: 0
+  width: 400px
+  height: 100%
+  margin: 0
+  padding: 0
+  z-index: $sidebar-z
+  transform: translateX(450px)
+  transition: all .3s
+
+  &--isActive
+    transform: translateX(0)
+
+  &__btn
+    position: absolute
+    top: 40px
+    left: 0
+    height: 50px
+    width: 50px
+    transform: translateX(-100%)
+    font-size: 25px
+    border: none
+    color: $box-color
+    background-color: $accent-color
+    border-radius: 3px 0 0 3px
+
+
+.sidebar
+  background-color: $box-color
+
+
+.mobile-nav
+  background-color: $accent-color
+  padding: 20px
+
+  &__inner
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+
+  &__list
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+  &__item
+    margin-bottom: 10px
+    position: relative
+    &:last-child
+      margin-bottom: 0
+
+  &__link
+    display: block
+    padding: 10px 5px
+    color: $box-color
+    font-size: 20px
+
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      right: 0
+      width: 0
+      height: 3px
+      background-color: $box-color
+      transition: width .3s
+
+    &:hover
+      color: $box-color
+      text-decoration: none
+      &:after
+        width: 100%
+
+
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  z-index: $overlay-z
+  background-color: #000
+  opacity: 0
+  visibility: hidden
+  transition: all .3s
+  &--isActive
+    opacity: .7
+    visibility: visible
+
+
+.header
+  width: 100%
+  margin-bottom: $side-line-size + 100px
+
+  &--bg
+    background-image: url(/img/bg-header.jpg)
+    background-size: cover
+    background-color: #242832
+    background-repeat: no-repeat
+    background-position: center
+    height: 515px
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    z-index: 1
+    &:before
+      content: ''
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      position: absolute
+      @include bg-hexToRgba($accent-color, 0.15)
+
+
+  &__bar
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    position: fixed
+    width: calc(100% - #{$side-line-size} * 2)
+    padding-top: 20px
+    padding-bottom: 20px
+    background-color: transparent
+    transition: all .4s ease
+    z-index: $header-z
+
+    &--sticky
+      position: fixed
+      width: calc(100% - #{$side-line-size} * 2)
+      padding-top: 0
+      padding-bottom: 0
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23)
+      background-color: $header-bg-color
+
+      .nav .nav__link, .nav .btn
+        color: $font-color
+
+  .logo
+    display: inline-block
+    padding: 10px 20px
+    font-size: 25px
+    line-height: 2
+    color: $accent-color
+    font-family: 'Raleway', sans-serif
+    &:hover,&:active,&:focus
+      text-decoration: none
+
+  .nav
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+    align-items: center
+    padding: 10px
+    font-family: 'Roboto Condensed', sans-serif
+    letter-spacing: 1px
+    font-weight: 700
+
+    &__list
+      display: -webkit-flex
+      display: -ms-flex
+      display: flex
+      list-style-type: none
+      margin: 0
+      padding: 0
+
+    &__item
+      margin-left: 30px
+      position: relative
+      &:first-child
+        margin-left: 0
+      &--isActive
+        .nav__link:after
+          width: 100%
+
+    &__link
+      display: block
+      padding: 12px 0
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+      color: #fff
+      text-decoration: none
+      white-space: nowrap
+      &:after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 0
+        height: 3px
+        background-color: $accent-color
+        transition: width .3s
+      &:hover
+        &:after
+          width: 100%
+
+  .btn-mobile-nav
+    display: none
+    font-size: 12px
+    font-weight: 700
+    letter-spacing: 1px
+    text-transform: uppercase
+    padding-left: 20px
+    padding-right: 20px
+    border: 1px solid $accent-bg-color
+    color: #fff
+    &:hover, &:active, &:focus
+      color: $accent-color
+
+  .btn-sidebar
+    height: 50px
+    width: 50px
+    font-size: 20px
+    color: #fff
+    background-color: transparent
+    border: 1px solid $accent-bg-color
+    transition: color .3s
+    margin-left: 30px
+    transition: all .3s
+    &:hover
+      color: $accent-color
+
+
+.content
+  position: relative
+  background-color: $accent-bg-color
+
+.section
+  margin-bottom: 20px
+  z-index: 3
+  display: -webkit-flex
+  display: -ms-flex
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__title
+    margin-top: 50px
+    color: #3d4451
+    font-size: 34px
+    line-height: 1.2
+    font-weight: 600
+    text-align: center
+    margin-bottom: 25px
+
+.box
+  position: relative
+  margin-top: 30px
+  margin-bottom: 50px
+  padding: 0
+  padding-top: 10px
+  background-color: $box-color
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24)
+  transform: scale(1)
+  transition: all .4s
+  font-size: 20px
+
+  &:hover
+    transform: scale(1.01)
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3)
+
+  &__title
+    margin-top: 50px
+    color: #3d4451
+    font-size: 34px
+    line-height: 1.2
+    font-weight: 600
+    text-align: center
+    margin-bottom: 25px
+
+  &__content
+    padding: 20px 40px 40px
+    color: $font-color
+    p
+      text-indent: 20px
+      margin-bottom: 25px
+      span
+        color: $accent-color
+    a
+      color: $accent-color
+      text-decoration: none!important
+      &:hover
+        color: darken($accent-color, 15%)
+      &:active, &:focus
+        color: darken($accent-color, 30%)
+    strong
+
+
+
+.about
+  position: relative
+  font-family: 'Roboto Condensed', sans-serif
+
+  &__profile
+    padding: 20px 50px 35px 50px
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+  &__social
+    background-color: $accent-color
+    padding: 15px 0
+
+  &__info
+    color: #3d4451
+    padding-bottom: 25px
+    margin-bottom: 25px
+    border-bottom: 1px solid #dedede
+
+  &__title
+    font-size: 36px
+    line-height: 1.1
+    font-weight: 700
+    margin-bottom: 5px
+    span
+      font-weight: 300
+
+  &__position
+    font-size: 18px
+    font-weight: 400
+    line-height: 1.1
+    margin-bottom: 0
+
+  &__list
+    margin: 0
+    padding: 0
+    list-style-type: none
+
+    &-item
+      margin-bottom: 13px
+      display: -webkit-flex
+      display: -ms-flex
+      display: flex
+      align-items: center
+      strong
+        display: block
+        width: 150px
+        float: left
+        color: #333
+        font-size: 14px
+        font-weight: 700
+        text-transform: uppercase
+        text-align: right
+
+      span
+        display: block
+        margin-left: 15px
+        font-size: 16px
+        font-weight: 400
+        line-height: 1
+        color: #9da0a7
+        &.about-search
+          display: inline-block
+          padding: 3px 7px
+          border-radius: 5px
+          color: #fff
+          margin-left: 15px
+          background-color: $accent-color
+
+  .social
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0
+    padding: 20px 0
+    list-style-type: none
+    &__item
+      margin-right: 30px
+      &:last-child
+        margin-right: 0
+    &__link
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 45px
+      height: 45px
+      font-size: 22px
+      border-radius: 50%
+      color: #fff
+      transition: background-color .4s
+      &:hover,&:active,&:focus
+        text-decoration: none
+        background-color: darken($accent-color, 8%)
+
+  &__txt
+    font-size: 24px
+    line-height: 1.8
+    padding: 0 10%
+    margin-bottom: 20px
+
+  .skills
+
+    &__title
+      font-size: 16px
+    .progress-bar
+      background-color: $accent-color
+
+  .adv-skills
+
+
+.portfolio
+  .box
+    transform: scale(1)
+  .box__content
+
+
+
+    .controls
+      padding: 2%
+      color: #eee
+      display: -webkit-flex
+      display: -ms-flex
+      display: flex
+      align-items: center
+      justify-content: center
+
+    label
+      font-weight: 300
+      margin: 0 .4em 0 0
+
+
+    button
+      display: inline-block
+      margin-right: 10px
+      padding: .4em .8em
+      background: transparent
+      border: 0
+      color: $font-color
+      font-size: 18px
+      font-weight: 700
+      border-radius: 4px
+      cursor: pointer
+      &:last-child
+        margin-right: 0
+
+
+    button.active
+
+
+    button:focus
+      outline: 0 none
+
+
+    button + label
+      margin-left: 1em
+
+
+    .container
+      padding: 2% 2% 0
+      text-align: justify
+      font-size: 0.1px
+
+      -webkit-backface-visibility: hidden
+
+
+    .container:after
+      content: ''
+      display: inline-block
+      width: 100%
+
+
+    .container .mix,
+    .container .gap
+      display: inline-block
+      width: 49%
+
+
+    .container .mix
+      text-align: left
+      background: #03899c
+      margin-bottom: 2%
+      display: none
+
+
+    .container .mix.category-1
+      border-top: 2px solid limegreen
+
+
+    .container .mix.category-2
+      border-top: 2px solid yellow
+
+
+    .container .mix:after
+      content: attr(data-myorder)
+      color: white
+      font-size: 16px
+      display: inline-block
+      vertical-align: top
+      padding: 4% 6%
+      font-weight: 700
+
+
+    .container .mix:before
+      content: ''
+      display: inline-block
+      padding-top: 60%
+
+
+    @media all and (min-width: 420px)
+      .container .mix,
+      .container .gap
+        width: 32%
+
+
+
+    @media all and (min-width: 640px)
+      .container .mix,
+      .container .gap
+        width: 23.5%
