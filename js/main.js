@@ -1,6 +1,12 @@
 $(function() {
 
 
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+    particlesJS.load('particles-js', '/js/particlesjs-config.json', function() {
+
+    });
+
+
     $(".btn-sidebar").click(function() {
         $(".sidebar").toggleClass("sidebar--isActive");
         $(".overlay").toggleClass("overlay--isActive");
@@ -34,12 +40,25 @@ $(function() {
             $(".header__bar").toggleClass("header__bar--sticky");
             $(".btn").toggleClass("btn--small");
         },
-        offset: 0
+        offset: "-70%"
     })
 
+    $("nav a, .header__logo, .about__profile a").smoothScroll({
+        offset: -80,
+        speed: 1000,
+    })
 
     $('#Container').mixItUp();
 
 
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'alwaysShowNavOnTouchDevices': true
+    });
+
+    $(".map--toggle").click(function() {
+        $(".map").toggleClass("map--opened");
+    });
 
 });
