@@ -566,10 +566,7 @@ section:after {
     .contacts .address a:hover, .contacts .address .map--toggle:hover {
       color: #83D5FB; }
 .contacts .map {
-  height: 0;
-  transition: height 1s; }
-  .contacts .map--opened {
-    height: 400px; }
+  height: 400px; }
 .contacts .social {
   display: -webkit-flex;
   display: -ms-flex;
