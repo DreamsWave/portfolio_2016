@@ -22,6 +22,11 @@ $(function() {
         $(".overlay").toggleClass("overlay--isActive");
     });
 
+    $(".mobile-nav__link").click(function() {
+        $(".mobile-nav").removeClass("mobile-nav--isActive");
+        $(".overlay").removeClass("overlay--isActive");
+    });
+
     $(".mobile-nav__btn").click(function() {
         $(".mobile-nav").removeClass("mobile-nav--isActive");
         $(".overlay").removeClass("overlay--isActive");
@@ -44,11 +49,13 @@ $(function() {
     })
 
     $("nav a, .header__logo, .about__profile a").smoothScroll({
-        offset: -80,
+        offset: 0,
         speed: 1000,
     })
 
     $('#Container').mixItUp();
+
+    new WOW().init();
 
 
     lightbox.option({

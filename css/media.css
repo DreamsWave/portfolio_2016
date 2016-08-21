@@ -33,7 +33,7 @@
     .about__profile p, .about__profile h1, .about__profile span {
       font-size: 16px; }
 
-  .contacts .feedback input, .contacts .feedback textarea {
+  .feedback input, .feedback textarea {
     font-size: 19px; } }
 @media (max-width: 480px) {
   .about__profile {
@@ -47,6 +47,9 @@
   .sidebar, .mobile-nav {
     width: 300px; }
 
+  .sidebar .feedback input[type="text"], .sidebar .feedback textarea {
+    font-size: 15px; }
+
   .about__title {
     font-size: 30px; }
 
@@ -56,5 +59,24 @@
     margin: 0 0 5px; }
   .about__list span.about-search {
     margin: 0; } }
+@media (max-height: 600px) {
+  .sidebar .box__title {
+    margin: 10px 0 5px; }
+  .sidebar .feedback {
+    margin: 0;
+    padding: 0 20px; }
+    .sidebar .feedback input[type="text"], .sidebar .feedback textarea {
+      font-size: 15px;
+      margin-bottom: 10px;
+      height: 40px; }
+    .sidebar .feedback input[type="text"] {
+      min-height: 30px; }
+    .sidebar .feedback input[type="submit"] {
+      font-size: 15px;
+      padding: 0;
+      width: 100px;
+      margin-bottom: 0; }
+  .sidebar .social {
+    padding: 0; } }
 
 /*# sourceMappingURL=media.css.map */

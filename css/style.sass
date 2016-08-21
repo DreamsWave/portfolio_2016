@@ -37,6 +37,7 @@ button
   &:focus, &:active
     outline: none!important
 
+
 .side-line
   position: fixed
   z-index: $side-line-z
@@ -114,6 +115,30 @@ button
 .sidebar
   background-color: $box-color
 
+  &__content
+    width: 100%
+    height: 100%
+    min-height: 360px
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+
+  .box__title
+    white-space: nowrap
+
+  .feedback
+    margin-bottom: 0
+    input, textarea
+      font-size: 20px
+
+  .social
+    background-color: $accent-color
+    width: 100%
+    align-self: flex-end
+
 
 .mobile-nav
   background-color: $accent-color
@@ -160,7 +185,7 @@ button
       &:after
         width: 100%
     &:active, &focus
-      text-decoration: none
+      text-decoration: none!important
       color: $box-color
 
 #particles-js
@@ -184,6 +209,34 @@ button
   &--isActive
     opacity: .7
     visibility: visible
+
+.social
+  display: -webkit-flex
+  display: -ms-flex
+  display: flex
+  justify-content: center
+  align-items: center
+  margin: 0
+  padding: 20px 0
+  list-style-type: none
+  &__item
+    margin-right: 30px
+    &:last-child
+      margin-right: 0
+  &__link
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 45px
+    height: 45px
+    font-size: 22px
+    border-radius: 50%
+    color: #fff
+    transition: background-color .4s
+    &:hover,&:active,&:focus
+      text-decoration: none
+      background-color: darken($accent-color, 8%)
+      color: #fff
 
 
 .header
@@ -302,6 +355,7 @@ button
     transition: all .3s
     &:hover
       color: $accent-color
+      background-color: #fff
 
 
 .content
@@ -353,10 +407,24 @@ section
     transform: scale(1.01)
     box-shadow: 0 5px 15px rgba(0,0,0,0.3)
 
+  &:before
+    content: ''
+    width: 0
+    height: 0
+    position: absolute
+    top: 0
+    right: 0
+    border: 30px solid
+    border-top-color: $accent-color
+    border-right-color: $accent-color
+    border-bottom-color: transparent
+    border-left-color: transparent
+    border-top-right-radius: 10px
+
   &__title
     margin-top: 50px
     color: #3d4451
-    font-size: 34px
+    font-size: 28px
     line-height: 1.2
     font-weight: 600
     text-align: center
@@ -383,6 +451,7 @@ section
 .home
   position: relative
   height: calc(100vh - #{$side-line-size} * 2)
+  min-height: 400px
   width: 100%
   background-color: $accent-color
 
@@ -396,15 +465,14 @@ section
     color: #fff
     font-size: 50px
 
-  i
+  div
     position: absolute
-    bottom: 20px
+    bottom: 10px
     left: 50%
     transform: translate(-50%,-50%)
-    font-size: 25px
-    color: #fff
-    &.animated
-      animation-duration: 1.8s
+    i
+      font-size: 25px
+      color: #fff
 
 
 .about
@@ -485,32 +553,7 @@ section
           margin-left: 15px
           background-color: $accent-color
 
-  .social
-    display: -webkit-flex
-    display: -ms-flex
-    display: flex
-    justify-content: center
-    align-items: center
-    margin: 0
-    padding: 20px 0
-    list-style-type: none
-    &__item
-      margin-right: 30px
-      &:last-child
-        margin-right: 0
-    &__link
-      display: flex
-      justify-content: center
-      align-items: center
-      width: 45px
-      height: 45px
-      font-size: 22px
-      border-radius: 50%
-      color: #fff
-      transition: background-color .4s
-      &:hover,&:active,&:focus
-        text-decoration: none
-        background-color: darken($accent-color, 8%)
+
 
   &__txt
     font-size: 24px
@@ -540,7 +583,6 @@ section
     border-radius: 10px
     color: #eee
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24)
-    z-index: 5
     margin-bottom: 20px
 
 
@@ -582,7 +624,6 @@ section
     background: $box-color
     border-radius: 10px
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24)
-    z-index: 5
     transition: all .3s
     &:hover
       box-shadow: 0 5px 15px rgba(0,0,0,0.3)
@@ -594,7 +635,6 @@ section
     content: ''
     display: inline-block
     width: 100%
-
 
   .container .mix,
   .container .gap
@@ -618,12 +658,6 @@ section
     border-top: 2px solid yellow
 
 
-
-
-
-
-
-
   @media all and (min-width: 640px)
     .container .mix,
     .container .gap
@@ -634,48 +668,6 @@ section
   .box
     &:hover
       transform: scale(1)
-
-  .feedback
-    display: flex
-    width: 100%
-    flex-direction: column
-    align-items: center
-    margin-bottom: 3em
-    padding: 20px 30px
-
-    input
-
-    input[placeholder]
-
-    input[type="text"]
-      height: 55px
-      width: 100%
-
-    input[type="submit"]
-      background-color: transparent
-      color: $accent-color
-      transition: all .4s
-      width: 200px
-      border-color: $accent-color
-      border-radius: 10px
-      &:hover
-        color: #fff
-        background-color: $accent-color
-
-    textarea
-      height: 200px
-      width: 100%
-      resize: none
-
-    input, textarea
-      margin-bottom: 40px
-      padding: .7em
-      border: 2px solid #ddd
-      color: $font-color
-      transition: border .5s
-      font-size: 24px
-      &:focus
-        border: 2px solid $accent-color
 
   .address
     list-style-type: none
@@ -702,32 +694,53 @@ section
   .map
     height: 400px
 
-  .social
-    display: -webkit-flex
-    display: -ms-flex
-    display: flex
-    justify-content: center
-    align-items: center
-    margin: 0
-    padding: 20px 0
-    list-style-type: none
-    &__item
-      margin-right: 30px
-      &:last-child
-        margin-right: 0
-    &__link
-      display: flex
-      justify-content: center
-      align-items: center
-      width: 45px
-      height: 45px
-      font-size: 22px
-      border-radius: 50%
+
+
+
+.feedback
+  display: flex
+  width: 100%
+  flex-direction: column
+  align-items: center
+  margin-bottom: 3em
+  padding: 20px 30px
+
+  input
+    min-height: 30px
+
+  input[placeholder]
+
+  input[type="text"]
+    height: 55px
+    width: 100%
+
+  input[type="submit"]
+    background-color: transparent
+    color: $accent-color
+    transition: all .4s
+    width: 200px
+    border-color: $accent-color
+    border-radius: 10px
+    &:hover
       color: #fff
-      transition: background-color .4s
-      &:hover,&:active,&:focus
-        text-decoration: none
-        background-color: darken($accent-color, 8%)
+      background-color: $accent-color
+
+  textarea
+    min-height: 80px
+    height: 200px
+    width: 100%
+    resize: none
+
+  input, textarea
+    margin-bottom: 40px
+    padding: .7em
+    border: 2px solid #ddd
+    color: $font-color
+    transition: border .5s
+    font-size: 24px
+    &:focus
+      border: 2px solid $accent-color
+
 
 .footer
   height: 100px

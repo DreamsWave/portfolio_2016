@@ -36,7 +36,7 @@
     p,h1,span
       font-size: 16px
 
-  .contacts .feedback input, .contacts .feedback textarea
+  .feedback input, .feedback textarea
     font-size: 19px
 
 
@@ -53,6 +53,11 @@
   .sidebar, .mobile-nav
     width: 300px
 
+  .sidebar
+    .feedback
+      input[type="text"], textarea
+        font-size: 15px
+
   .about__title
     font-size: 30px
 
@@ -63,3 +68,25 @@
       margin: 0 0 5px
     span.about-search
       margin: 0
+
+
+@media (max-height: 600px)
+  .sidebar
+    .box__title
+      margin: 10px 0 5px
+    .feedback
+      margin: 0
+      padding: 0 20px
+      input[type="text"], textarea
+        font-size: 15px
+        margin-bottom: 10px
+        height: 40px
+      input[type="text"]
+        min-height: 30px
+      input[type="submit"]
+        font-size: 15px
+        padding: 0
+        width: 100px
+        margin-bottom: 0
+    .social
+      padding: 0

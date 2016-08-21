@@ -22,6 +22,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body>
@@ -35,7 +36,22 @@
 
         <div class="sidebar">
             <button class="sidebar__btn"><i class="fa fa-times" aria-hidden="true"></i></button>
-            <div class="sidebar__content"></div>
+            <div class="sidebar__content">
+                <h3 class="box__title">Напишите мне</h3>
+                <form class="feedback" action="https://formspree.io/idreamzzer@gmail.com" method="POST">
+                    <input type="text" name="name" placeholder="Как вас зовут?">
+                    <input type="text" name="_replyto" placeholder="Адрес электронной почты" required="Заполните адрес электронной почты" />
+                    <textarea name="message" rows="5" placeholder="Ваше сообщение" required=""></textarea>
+                    <input type="submit" value="Отправить">
+                    <input type="hidden" name="_next" value="#contacts" />
+                </form>
+                <ul class="social">
+                    <li class="social__item"><a target="_blank" href="https://vk.com/dreamzzer" class="social__link"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                    <li class="social__item"><a target="_blank" href="https://www.facebook.com/uskov.alx" class="social__link"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li class="social__item"><a target="_blank" href="https://twitter.com/idreamzzer" class="social__link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li class="social__item"><a target="_blank" href="https://github.com/idreamzzer" class="social__link"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="mobile-nav">
@@ -80,7 +96,7 @@
                                     <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
                                 </ul>
                                 <button class="btn-mobile-nav btn">Меню</button>
-                                <button class="btn-sidebar btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                                <button class="btn-sidebar btn"><i class="fa fa-envelope" aria-hidden="true"></i></button>
                             </nav>
                         </div>
 
@@ -94,15 +110,15 @@
         <div class="content">
 
             <section id="home" class="home">
-                <h2>Здравствуйте!</h2>
-                <i class="fa fa-arrow-down animated bounce infinite" aria-hidden="true"></i>
+                <h2 class="wow fadeIn" data-wow-delay="1s">Здравствуйте!</h2>
+                <div class="wow fadeIn" data-wow-delay="1.5s"><i class="fa fa-arrow-down wow bounce infinite" data-wow-duration="2s" data-wow-delay="2s" aria-hidden="true"></i></div>
             </section>
 
             <section id="about" class="about section">
                 <div class="container">
                     <h2 class="section__title">Обо мне</h2>
 
-                    <div class="box">
+                    <div class="box wow fadeInUp">
                         <div class="about__profile">
                             <span>Добро пожаловать на мой сайт!</span>
                             <h1>Меня зовут Усков Алексей.</h1>
@@ -122,7 +138,7 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="skills box clearfix">
+                            <div class="skills box clearfix wow fadeInLeft">
                                 <h3 class="box__title">Навыки</h3>
                                 <div class="box__content">
                                     <span class="skills__title">HTML & CSS</span>
@@ -145,8 +161,8 @@
                                     </div>
                                     <span class="skills__title">WordPress</span>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="49" aria-valuemin="0" aria-valuemax="100" style="width:49%">
-                                            49%
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width:35%">
+                                            35%
                                         </div>
                                     </div>
                                     <span class="skills__title">Modx</span>
@@ -159,7 +175,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="adv-skills box">
+                            <div class="adv-skills box wow fadeInRight">
                                 <h3 class="box__title">Дополнительные навыки</h3>
                                 <div class="box__content">
                                     <p><strong>Знание программ и технологий: </strong>Photoshop, Atom, SASS/SCSS, Gulp, Bootstrap, Git.</p>
@@ -176,12 +192,12 @@
 
             <section id="portfolio" class="portfolio section">
                 <h2 class="section__title">Портфолио</h2>
-                <div class="controls">
+                <div class="controls wow slideInUp">
                     <button class="filter" data-filter="all">Все</button>
                     <button class="filter" data-filter=".category-1">Category 1</button>
                     <button class="filter" data-filter=".category-2">Category 2</button>
                 </div>
-                <div id="Container" class="container">
+                <div id="Container" class="container wow fadeInUp">
                     <div class="mix category-1" data-myorder="1">
                         <a href="/img/cat.jpg" data-lightbox="image-1" data-title="My caption"><img src="/img/cat.jpg" alt=""></a>
                     </div>
@@ -218,7 +234,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="box">
+                            <div class="box wow fadeInLeft">
+                                <h3 class="box__title">Напишите мне</h3>
                                 <form class="feedback" action="https://formspree.io/idreamzzer@gmail.com" method="POST">
                                     <input type="text" name="name" placeholder="Как вас зовут?">
                                     <input type="text" name="_replyto" placeholder="Адрес электронной почты" required="Заполните адрес электронной почты" />
@@ -229,7 +246,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="box">
+                            <div class="box wow fadeInRight">
                                 <ul class="address">
                                     <li>
                                         <span>Почта:</span>
@@ -282,6 +299,17 @@
     <script src="/js/particles.min.js"></script>
     <script src="/js/jquery.smooth-scroll.min.js"></script>
     <script src="/js/lightbox.min.js"></script>
+    <script src="/js/wow.min.js"></script>
 </body>
+
+</html>
+>
+
+</html>
+js/wow.min.js"></script>
+</body>
+
+</html>
+>
 
 </html>
