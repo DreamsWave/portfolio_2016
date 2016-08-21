@@ -503,6 +503,8 @@ section:after {
 
 .portfolio {
   padding-bottom: 130px; }
+  .portfolio a {
+    z-index: 6; }
   .portfolio img {
     width: 100%; }
   .portfolio .controls {
@@ -557,11 +559,20 @@ section:after {
     text-align: left;
     background: #03899c;
     margin-bottom: 2%;
-    display: none; }
-  .portfolio .container .mix.category-1 {
-    border-top: 2px solid limegreen; }
-  .portfolio .container .mix.category-2 {
-    border-top: 2px solid yellow; }
+    display: none;
+    position: relative; }
+    .portfolio .container .mix:before {
+      content: "";
+      height: 5px;
+      width: 0;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width 0.3s;
+      background-color: #83D5FB; }
+    .portfolio .container .mix:hover:before {
+      width: 100.5%; }
   @media all and (min-width: 640px) {
     .portfolio .container .mix,
     .portfolio .container .gap {
