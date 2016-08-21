@@ -49,7 +49,7 @@ $(function() {
     })
 
     $("nav a, .header__logo, .about__profile a").smoothScroll({
-        offset: 0,
+        offset: -40,
         speed: 1000,
     })
 

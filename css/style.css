@@ -43,7 +43,7 @@ button:focus, button:active {
   cursor: pointer;
   text-align: center;
   background: transparent;
-  border: 1px solid #dfdfdf;
+  border: 1px solid #d3d3d3;
   -webkit-transition: all 200ms ease-out;
   -moz-transition: all 200ms ease-out;
   transition: all 200ms ease-out; }
@@ -276,7 +276,7 @@ button:focus, button:active {
     text-transform: uppercase;
     padding-left: 20px;
     padding-right: 20px;
-    border: 1px solid #dfdfdf;
+    border: 1px solid #d3d3d3;
     color: #fff; }
     .header .btn-mobile-nav:hover, .header .btn-mobile-nav:active, .header .btn-mobile-nav:focus {
       color: #83D5FB; }
@@ -286,7 +286,7 @@ button:focus, button:active {
     font-size: 20px;
     color: #fff;
     background-color: transparent;
-    border: 1px solid #dfdfdf;
+    border: 1px solid #d3d3d3;
     transition: color 0.3s;
     padding: 10px 15px;
     margin-left: 30px;
@@ -297,7 +297,7 @@ button:focus, button:active {
 
 .content {
   position: relative;
-  background-color: #dfdfdf; }
+  background-color: #d3d3d3; }
 
 section:after {
   content: "";
@@ -307,7 +307,7 @@ section:after {
   border-bottom: 3px dashed #83D5FB; }
 
 .section {
-  padding-top: 100px;
+  padding-top: 60px;
   padding-bottom: 100px;
   z-index: 3;
   display: -webkit-flex;
@@ -317,16 +317,36 @@ section:after {
   align-items: center;
   position: relative; }
   .section__title {
-    margin-bottom: 50px;
-    color: #3d4451;
-    font-size: 34px;
+    position: relative;
+    margin-bottom: 65px;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 22px;
     line-height: 1.2;
     font-weight: 600;
-    text-align: center; }
+    text-align: center;
+    background-color: #83D5FB;
+    border: 2px dashed #fff;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    z-index: 4;
+    text-transform: uppercase;
+    font-family: "Russo One", sans-serif; }
+    .section__title:before {
+      content: "";
+      position: absolute;
+      top: -7px;
+      left: -7px;
+      width: calc(100% + 14px);
+      height: calc(100% + 14px);
+      border: 5px solid #83D5FB;
+      border-top-left-radius: 35px;
+      border-bottom-right-radius: 35px;
+      z-index: -1;
+      background: transparent; }
 
 .box {
   position: relative;
-  margin-top: 30px;
   margin-bottom: 50px;
   padding: 0;
   padding-top: 10px;
