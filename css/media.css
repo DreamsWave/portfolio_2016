@@ -36,12 +36,6 @@
   .feedback input, .feedback textarea {
     font-size: 19px; } }
 @media (max-width: 480px) {
-  #preloader {
-    display: none !important; }
-
-  #particles-js canvas {
-    display: none; }
-
   .about__profile {
     padding: 30px 25px 40px; }
     .about__profile p, .about__profile h1, .about__profile span {
@@ -84,5 +78,8 @@
       margin-bottom: 0; }
   .sidebar .social {
     padding: 0; } }
+@media (max-width: 415px) {
+  #particles-js canvas {
+    display: none; } }
 
 /*# sourceMappingURL=media.css.map */
