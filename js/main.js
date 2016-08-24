@@ -1,5 +1,12 @@
 $(function() {
 
+    // preloader
+    $(window).load(function() {
+        setTimeout(function() {
+            $('#preloader').fadeOut('slow', function() {});
+        }, 1000);
+    });
+
 
     /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
     particlesJS.load('particles-js', '/js/particlesjs-config.json', function() {});
@@ -87,6 +94,12 @@ $(function() {
 
 
     //  wow.js
+    var wow = new WOW({
+        boxClass: 'wow', // animated element css class (default is wow)
+        animateClass: 'animated', // animation css class (default is animated)
+        offset: 0, // distance to the element when triggering the animation (default is 0)
+        mobile: false // trigger animations on mobile devices (true is default)
+    });
     new WOW().init();
 
 

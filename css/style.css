@@ -9,6 +9,53 @@ body {
 button:focus, button:active {
   outline: none !important; }
 
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #1A77D4;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #preloader span {
+    display: block;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: rotate(0) scale(1);
+    animation: rotate 2s infinite linear; }
+    #preloader span:before, #preloader span:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 15px;
+      height: 15px;
+      background: #fff;
+      border-radius: 50%;
+      transform: scale(1); }
+    #preloader span:before {
+      right: 20px;
+      transform: scale(1); }
+    #preloader span:after {
+      left: 20px; }
+@keyframes rotate {
+  0% {
+    transform: rotate(0) scale(1);
+    opacity: 1; }
+  50% {
+    transform: rotate(180deg) scale(1.3);
+    opacity: 0.3; }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 1; } }
 .side-line {
   position: fixed;
   z-index: 50;
