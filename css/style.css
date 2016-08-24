@@ -640,7 +640,8 @@ section:after {
     margin: 0;
     color: #fff;
     font-size: 50px; }
-  .home div {
+  .home a {
+    display: inline-block;
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -648,8 +649,9 @@ section:after {
     -webkit-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
-    .home div i {
+    transform: translate(-50%, -50%);
+    z-index: 3; }
+    .home a i {
       font-size: 25px;
       color: #fff; }
 

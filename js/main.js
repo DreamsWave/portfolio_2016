@@ -76,7 +76,7 @@ $(function() {
 
 
     // smoothScroll
-    $("nav a, .header__logo, .about__profile a").smoothScroll({
+    $("nav a, .header__logo, .about__profile a, .home__link").smoothScroll({
         offset: -40,
         speed: 1000,
     });
