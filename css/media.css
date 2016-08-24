@@ -78,5 +78,8 @@
       margin-bottom: 0; }
   .sidebar .social {
     padding: 0; } }
+@media (max-width: 415px) {
+  #particles-js canvas {
+    display: none; } }
 
 /*# sourceMappingURL=media.css.map */
