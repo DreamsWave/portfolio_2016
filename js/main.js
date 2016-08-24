@@ -94,11 +94,6 @@ $(function() {
         mobile: false // trigger animations on mobile devices (true is default)
     });
     new WOW().init();
-    if (isMobile || isTablet) {
-        $('.wow').addClass('wow-removed').removeClass('wow');
-    } else {
-        $('.wow-removed').addClass('wow').removeClass('wow-removed');
-    }
 
 
     // lightbox

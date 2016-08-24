@@ -18,15 +18,11 @@ button:focus, button:active {
   height: 100%;
   overflow: visible;
   background: #1A77D4;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  align-items: center; }
+  display: block;
+  text-align: center; }
   #preloader span {
-    display: block;
+    display: inline-block;
+    margin-top: 50vh;
     position: relative;
     width: 15px;
     height: 15px;
