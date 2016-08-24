@@ -47,6 +47,12 @@
     .about__profile p, .about__profile h1, .about__profile span {
       font-size: 16px; }
 
+  .social {
+    display: block;
+    text-align: center; }
+    .social li {
+      display: inline-block; }
+
   .home h2 {
     font-size: 30px; }
 
