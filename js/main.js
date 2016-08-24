@@ -1,12 +1,5 @@
 $(function() {
 
-    // preloader
-    $(window).load(function() {
-        setTimeout(function() {
-            $('#preloader').fadeOut('slow', function() {});
-        }, 1000);
-    });
-
 
     /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
     particlesJS.load('particles-js', '/js/particlesjs-config.json', function() {});
@@ -101,6 +94,11 @@ $(function() {
         mobile: false // trigger animations on mobile devices (true is default)
     });
     new WOW().init();
+    if (isMobile || isTablet) {
+        $('.wow').addClass('wow-removed').removeClass('wow');
+    } else {
+        $('.wow-removed').addClass('wow').removeClass('wow-removed');
+    }
 
 
     // lightbox

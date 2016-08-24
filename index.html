@@ -59,6 +59,21 @@
     </noscript>
     <!-- /Yandex.Metrika counter -->
 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- preloader -->
+    <script>
+        $(document).ready(function($) {
+            $(window).load(function() {
+                setTimeout(function() {
+                    $('#preloader').fadeOut('slow', function() {});
+                }, 1000);
+
+            });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -321,8 +336,6 @@
 
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="/js/main.min.js"></script>
